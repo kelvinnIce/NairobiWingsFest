@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="__BADGE__" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nairobi Wings Fest | Who will the city crown wings champion?</title>
+<meta name="description" content="One day, 20 wing spots, and a vote built into every ticket. Nairobi Wings Fest, April 2027.">
+<style>
+__FONTS__
+:root{--big:clamp(3rem,5.6vw,5.6rem);--bg:#F4E3D2;--bg2:#EBD2BD;--red:#D43747;--ink:#3A0B14;--green:#003D29;--cream-l:#FBF1E6;--gutter:clamp(1.25rem,4vw,3rem);--form-fg:#F4E3D2;--form-bg:#D43747;
+  --p1:url(__IMG_P1__);--p2:url(__IMG_P2__);--p3:url(__IMG_P3__);--p4:url(__IMG_P4__);--p5:url(__IMG_P5__);--p6:url(__IMG_P6__)}
+__COMMON_CSS__
+__TICKET_CSS__
+
+/* hero, as in your layout */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;padding:0}
+.hero .logo{position:relative;z-index:3;height:clamp(60px,7.2vw,100px);width:auto;margin:clamp(14px,2vw,26px) auto 0}
+.hero .center{position:relative;z-index:3;text-align:center;margin:auto;padding:1.5rem 1rem clamp(7rem,12vw,10rem)}
+.hero h1{font-size:clamp(3.6rem,7.4vw,8.4rem);line-height:.94;color:var(--red)}
+.hero .sub{margin:1.2rem auto clamp(2rem,4vw,3.4rem);max-width:30em;font-size:clamp(1.05rem,1.5vw,1.45rem);line-height:1.4;color:var(--red)}
+.ph{position:absolute;z-index:2;height:auto}
+.ph.tl{left:0;top:0;width:clamp(120px,19vw,340px)}
+.ph.tr{right:0;top:0;width:clamp(100px,15vw,270px)}
+.ph.bl{left:0;bottom:clamp(4.2rem,7vw,7rem);width:clamp(100px,15.5vw,280px)}
+.ph.br{right:0;bottom:clamp(4rem,6.5vw,6.5rem);width:clamp(120px,20vw,360px)}
+.hero .ribbon{position:absolute;z-index:4;left:-3%;right:-3%;bottom:-.4rem;transform:rotate(-1.2deg)}
+@media (max-width:760px){
+  .hero h1{font-size:clamp(3.2rem,15vw,5.6rem)}
+  .ph.tl{width:30vw}.ph.tr{width:27vw}.ph.bl{display:none}.ph.br{width:40vw;bottom:3.4rem}
+  .hero .logo{height:60px}.hero .center{padding-bottom:12rem}
+}
+
+/* sections */
+.w6{width:min(calc(100% - 2 * var(--gutter)),max(60vw,780px));margin-inline:auto}
+section{padding-block:clamp(4rem,9vw,8rem)}
+h2.anton{font-size:clamp(3.2rem,8vw,7.6rem);color:var(--red)}
+.center-head{text-align:center}
+.lead{margin:1.5rem auto 0;text-align:center}
+/* crown: how the crown is decided */
+.crown .wrap{max-width:1060px;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem);align-items:center}
+.crown h2.anton{font-size:var(--big);line-height:.92}
+.crown .prose{margin:1.6rem 0 0;max-width:30em;font-size:clamp(1.05rem,1.5vw,1.3rem)}
+.crown .prose p{margin:0 0 1.1em}.crown .prose p:last-child{margin:0}
+.split{display:grid;grid-template-columns:auto auto;align-items:center;justify-content:start;gap:clamp(1.2rem,3vw,2.6rem)}
+.nums{display:flex;flex-direction:column;gap:clamp(.9rem,2vw,1.6rem)}
+.num{font-family:'Anton',sans-serif;font-size:clamp(6rem,11.5vw,11rem);line-height:.82}
+.num.n1{color:var(--red)}.num.n2{color:var(--green)}
+.num small{display:block;font:600 clamp(.9rem,1.15vw,1.1rem)/1.3 'Instrument Sans',sans-serif;color:var(--ink);margin-top:.7rem;max-width:11em}
+.viz{display:flex;flex-direction:column;gap:.8rem;width:clamp(170px,17vw,250px)}
+.dots{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(4px,.5vw,7px)}
+.dots i{aspect-ratio:1;border-radius:50%;background:var(--red);transition:opacity .35s ease,transform .35s ease;transition-delay:calc(var(--i,0)*9ms)}
+.dots i.j{background:var(--green)}
+.dots.pre i{opacity:0;transform:scale(.4)}
+.viz small{font:500 .85rem/1.35 'Instrument Sans',sans-serif;color:var(--ink);opacity:.8}
+@media (prefers-reduced-motion:reduce){.dots i{transition:none}}
+@media (max-width:860px){.crown .wrap{grid-template-columns:1fr}}
+@media (max-width:560px){.num small{max-width:9em}.viz{width:min(44vw,190px)}}
+
+.menu{text-align:center;overflow:hidden}
+.menu h2.anton{font-size:clamp(1.9rem,2.7vw,2.5rem);letter-spacing:.04em;margin-bottom:clamp(1.2rem,2.4vw,2rem)}
+.bill{margin:0 auto;max-width:1180px;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:var(--big);line-height:1.08;color:var(--red);text-wrap:balance}
+.bill .pill{display:inline-block;width:1.9em;height:.76em;border-radius:999px;background:#E3C3AC center/cover no-repeat;vertical-align:-.05em;margin:0 .1em}
+.bill .p1{background-image:var(--p1)}
+.bill .p2{background-image:var(--p2)}
+.bill .p3{background-image:var(--p3)}
+.bill .p4{background-image:var(--p4)}
+.bill .p5{background-image:var(--p5)}
+.bill .p6{background-image:var(--p6)}
+.bill .sep{display:inline-block;width:.62em;height:.55em;margin:0 .22em;vertical-align:.02em;color:var(--ink)}
+.bill-note{margin:clamp(1.5rem,3vw,2.5rem) auto 0;max-width:30em;font-size:1.15rem}
+.expect-list{display:none;list-style:none;margin:0;padding:0;text-align:left}
+.expect-list li{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:1rem;align-items:start;padding:1.15rem 0;border-top:2px solid var(--ink)}
+.expect-list li:last-child{border-bottom:2px solid var(--ink)}
+.expect-list b{font:400 clamp(1.7rem,7.4vw,2.2rem)/1 'Anton',sans-serif;text-transform:uppercase;color:var(--red)}
+.expect-list span{font-size:1rem;line-height:1.4}
+@media (max-width:760px){
+  .menu{text-align:left}
+  .menu h2.anton{font-size:1.9rem;margin-bottom:1rem}
+  .bill,.bill-note{display:none}
+  .expect-list{display:block}
+}
+
+.spots{position:relative;background:var(--bg2);z-index:3;--pw:clamp(210px,27vw,420px)}
+.spots .wrap{position:relative}
+.spots .top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,5vw,4.5rem);align-items:end;margin-bottom:clamp(1.6rem,3vw,2.6rem)}
+.spots .prose{margin:0;font-size:clamp(1rem,1.25vw,1.2rem);color:var(--red);max-width:26em}
+.slots{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(8px,1.2vw,14px)}
+.slot{background:var(--bg);border-radius:18px;padding:.8rem 1rem 1rem;min-height:clamp(86px,9vw,120px);display:flex;flex-direction:column;justify-content:space-between;border:2px dashed rgba(212,55,71,.45)}
+.slot-n{font:400 clamp(1.8rem,3.2vw,3rem)/1 'Anton',sans-serif;color:var(--red)}
+.slot-name{font-weight:600;font-size:.95rem;opacity:.7}
+.slot.is-taken{background:var(--red);border-style:solid;border-color:var(--red)}
+.slot.is-taken .slot-n,.slot.is-taken .slot-name{color:var(--bg);opacity:1}
+.spots .row{display:flex;align-items:center;gap:1rem;margin-top:2rem;min-height:140px}
+.spots .peek{position:absolute;right:0;bottom:calc(var(--pw)*-.215);width:var(--pw);z-index:2;pointer-events:none}
+@media (max-width:760px){.spots .top{grid-template-columns:1fr}}
+.spots h2.anton{font-size:clamp(2.8rem,5.6vw,5.4rem)}
+@media (max-width:960px){.slots{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:560px){.slots{grid-template-columns:repeat(2,minmax(0,1fr))}.spots{--pw:150px}}
+
+.doors .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2.5vw,2rem)}
+.door{position:relative;overflow:hidden;border-radius:30px;padding:clamp(1.8rem,4vw,3.4rem);min-height:clamp(340px,34vw,460px);display:flex;flex-direction:column;align-items:flex-start;gap:1.1rem;color:var(--bg)}
+.door.v{background:var(--red)}.door.s{background:var(--green)}
+.door h2{font-size:clamp(2.8rem,4.6vw,4.4rem);color:var(--bg);position:relative;z-index:2}
+.door p{margin:0;max-width:17em;font-size:1.2rem;line-height:1.4;position:relative;z-index:2}
+.door .btn{position:relative;z-index:2;margin-top:auto}
+.door img{position:absolute;right:0;top:0;width:36%;z-index:1}
+.door.v img{top:auto;bottom:0;right:0;height:92%;width:auto}
+.door.s img{top:-5%;bottom:auto;right:-5%;width:41%}
+.door h2,.door p{max-width:68%}
+@media (max-width:820px){.doors .wrap{grid-template-columns:1fr}.door.s img{width:36%}.door.v img{height:74%;width:auto}.door h2,.door p{max-width:66%}}
+
+.faq .wrap{max-width:820px}
+.faq h2{text-align:center;margin-bottom:clamp(1.5rem,3vw,2.5rem)}
+
+.join{position:relative;background:var(--red);color:var(--bg);overflow:hidden;--t-main:var(--green);--t-main-fg:var(--bg);--t-hl:#F6A9A9;--t-stub:var(--bg);--t-stub-fg:var(--ink);--t-notch:var(--red);--t-btn:var(--red);--t-btn-fg:var(--bg);--t-shadow:rgba(58,11,20,.28);--lane-fg:var(--bg);--lane-bg:var(--red)}
+.join .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.join .box{max-width:520px}
+.join h2{color:var(--bg);margin-bottom:1rem}
+.join .prose{margin:0 0 1.6rem}
+.join .ticket{margin-inline:auto}
+@media (max-width:900px){.join .grid{grid-template-columns:1fr}.join .ticket{max-width:560px}}
+</style>
+</head>
+<body>
+
+<div class="float-cta"><a class="btn btn-red" href="#join">Get involved</a></div>
+
+<header class="hero" id="top">
+  <img class="logo" src="__BADGE__" alt="Nairobi Wings Fest">
+  <img class="ph tl" src="__IMG_basket__" alt="">
+  <img class="ph tr" src="__IMG_eating__" alt="">
+  <img class="ph bl" src="__IMG_saucy__" alt="">
+  <img class="ph br" src="__IMG_hand_s__" alt="">
+  <div class="center">
+    <h1 class="anton">Who will the city<br>crown wings<br>champion?</h1>
+    <p class="sub">Come witness the city&rsquo;s ultimate celebration of wings and have your say in crowning the best chicken wings spot in Nairobi.</p>
+    <a class="split-cta" href="#join"><span class="t">Get involved</span><span class="a">__ARROW__</span></a>
+  </div>
+  <div class="ribbon" aria-hidden="true">
+    <div class="track">
+      <span>April 2027<i></i>Nairobi, Kenya<i></i>April 2027<i></i>Nairobi, Kenya<i></i></span>
+      <span>April 2027<i></i>Nairobi, Kenya<i></i>April 2027<i></i>Nairobi, Kenya<i></i></span>
+      <span>April 2027<i></i>Nairobi, Kenya<i></i>April 2027<i></i>Nairobi, Kenya<i></i></span>
+    </div>
+  </div>
+</header>
+
+<section class="crown" id="crown">
+  <div class="wrap">
+    <div>
+      <h2 class="anton">One ticket.<br>One vote.<br>One crown.</h2>
+      <div class="prose">
+        <p>Every ticket carries a QR code, so every guest gets a vote, and voting stays open from the first plate to the last.</p>
+        <p>The crowd decides most of the final score and a panel of judges scores the plates for the rest. The winner is announced live on the day.</p>
+      </div>
+    </div>
+    <div class="split" role="img" aria-label="Final score: crowd vote 70 percent, judges 30 percent">
+      <div class="nums">
+        <div class="num n1">70<small>The crowd, one vote on every ticket</small></div>
+        <div class="num n2">30<small>The judges, scored on the plate</small></div>
+      </div>
+      <div class="viz" aria-hidden="true">
+        <div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i><i class="j"></i></div>
+        <small>Every dot is a point of the final score.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <h2 class="anton">What to expect</h2>
+    <p class="bill">
+      Wing <i class="pill p1"></i> eating contest
+      <i class="sep">__CROWN__</i>
+      Live music <i class="pill p2"></i> and DJs
+      <i class="pill p5"></i>
+      Chef <i class="pill p3"></i> masterclasses
+      <i class="sep">__CROWN__</i>
+      Hot sauce <i class="pill p4"></i> challenges
+      <i class="pill p6"></i>
+      The winner reveal
+    </p>
+    <p class="bill-note">A full day built around the food, with enough happening around it to feel like a day out and not a row of stalls.</p>
+    <ul class="expect-list">
+      <li><b>Wing eating contest</b><span>A crowd-facing challenge built for noise and nerve.</span></li>
+      <li><b>Live music and DJs</b><span>A proper day out around the food.</span></li>
+      <li><b>Chef masterclasses</b><span>Short, useful sessions from chefs and wing obsessives.</span></li>
+      <li><b>Hot sauce challenges</b><span>Blind taste tests, pairings and dares.</span></li>
+      <li><b>The winner reveal</b><span>The final crown, on stage, in front of everyone who voted.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="spots" id="spots">
+  <div class="wrap">
+    <div class="top">
+      <h2 class="anton">20 spots.<br>One crown.</h2>
+      <p class="prose">We cap the field at 20 so every kitchen gets noticed. Each tile fills in as a vendor confirms. Cook wings in Nairobi? Yours is open.</p>
+    </div>
+    <ul class="slots" data-slots aria-label="The 20 vendor spots"></ul>
+    <div class="row"><a class="btn btn-red" href="#join" data-role-link="vendor">Apply for a spot</a></div>
+  </div>
+  <img class="peek" src="__IMG_PEEK__" alt="">
+</section>
+
+<section class="doors" aria-label="Get involved">
+  <div class="wrap">
+    <div class="door v">
+      <h2 class="anton">Cook for the crown.</h2>
+      <p>Quality over volume. Tell us about your wings and we will be in touch about one of the 20 spots.</p>
+      <a class="btn btn-cream" href="#join" data-role-link="vendor">Apply as a vendor</a>
+      <img src="__IMG_DOOR_V__" alt="">
+    </div>
+    <div class="door s" id="partner">
+      <h2 class="anton">Own a moment.</h2>
+      <p>Founding partner conversations are open, and category exclusivity is available for select partners.</p>
+      <a class="btn btn-cream" href="#join" data-role-link="sponsor">Talk to us about partnering</a>
+      <img src="__IMG_DOOR_S__" alt="">
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2 class="anton">Questions</h2>
+    <div>__FAQ__</div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="wrap grid">
+    <div class="box">
+      <h2 class="anton">Be first through the gate.</h2>
+      <p class="prose">Tickets are not on sale yet. Join the early list and your ticket comes to you first, with the date, the venue and a vote built in. Vendors and partners, pick your lane.</p>
+      <fieldset class="lane">
+        <legend>I am joining as</legend>
+        <div class="pills">
+          <label><input type="radio" name="role" value="attendee" form="signup" checked><span>Guest</span></label>
+          <label><input type="radio" name="role" value="vendor" form="signup"><span>Wings spot</span></label>
+          <label><input type="radio" name="role" value="sponsor" form="signup"><span>Partner</span></label>
+        </div>
+      </fieldset>
+    </div>
+    __TICKET__
+  </div>
+</section>
+
+
+
+<script>__SHARED_JS__</script>
+<script>__TICKET_JS__</script>
+<script>
+(function(){var d=document.querySelector('.dots');if(!d)return;
+d.querySelectorAll('i').forEach(function(el,i){el.style.setProperty('--i',i)});
+if(!('IntersectionObserver' in window)||(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches))return;
+d.classList.add('pre');
+var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){d.classList.remove('pre');io.disconnect()}},{threshold:.35});io.observe(d);})();
+</script>
+</body>
+</html>

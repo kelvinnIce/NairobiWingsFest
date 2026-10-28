@@ -1,0 +1,67 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Instrument Sans',system-ui,-apple-system,Segoe UI,sans-serif;font-size:1.125rem;line-height:1.55;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.anton{text-wrap:balance;font-family:'Anton','Arial Narrow',Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.95;letter-spacing:.005em;margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:var(--gutter)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.prose{font-size:clamp(1.12rem,1.6vw,1.35rem);line-height:1.55;max-width:34em}
+.prose p{margin:0 0 1.1em}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:.5rem 1.7rem;border-radius:10px;font:400 1.2rem/1 'Anton',sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .15s,color .15s,transform .15s}
+.btn:active{transform:translateY(1px)}
+.btn-red{background:var(--red);color:var(--bg)}
+.btn-red:hover{background:var(--ink)}
+.btn-cream{background:var(--bg);color:var(--red)}
+.btn-cream:hover{background:#fff}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:var(--bg)}
+.split-cta{display:inline-flex;gap:0;text-decoration:none}
+.split-cta span{display:inline-flex;align-items:center;justify-content:center;min-height:56px;background:var(--red);color:var(--bg);font:400 1.2rem/1 'Anton',sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.split-cta .t{padding:0 1.8rem;border-radius:10px 4px 4px 10px}
+.split-cta .a{width:60px;border-radius:4px 10px 10px 4px;margin-left:3px;position:relative}
+.split-cta .a::before{content:"";position:absolute;left:-2px;top:8px;bottom:8px;border-left:2px dotted rgba(244,227,210,.7)}
+.split-cta .a svg{width:22px;height:22px}
+.split-cta:hover span{background:var(--ink)}
+
+/* floating cta, shown once the hero scrolls away */
+.float-cta{position:fixed;top:14px;right:14px;z-index:60;opacity:0;transform:translateY(-10px);pointer-events:none;transition:opacity .25s,transform .25s}
+body.past-hero .float-cta{opacity:1;transform:none;pointer-events:auto}
+.float-cta .btn{min-height:44px;font-size:1.05rem;box-shadow:0 6px 18px rgba(58,11,20,.22)}
+
+/* marquee ribbon */
+.ribbon{background:var(--red);color:var(--bg);overflow:hidden;white-space:nowrap}
+.ribbon .track{display:inline-flex;animation:slide 40s linear infinite}
+.ribbon:hover .track{animation-play-state:paused}
+.ribbon span{display:inline-flex;align-items:center;gap:clamp(1.5rem,3vw,3rem);padding-right:clamp(1.5rem,3vw,3rem);font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(1.8rem,4vw,3.6rem);line-height:1;padding-block:.5em}
+.ribbon i{width:3px;height:1.1em;background:currentColor;opacity:.8}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ribbon .track{animation:none}}
+
+/* crown doodle */
+.crown-svg{overflow:visible}
+
+/* faq */
+details{border-top:2px solid var(--ink)}
+details:last-child{border-bottom:2px solid var(--ink)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;padding:1.1rem 0;font:400 clamp(1.5rem,2.5vw,2.1rem)/1.05 'Anton',sans-serif;text-transform:uppercase;letter-spacing:.01em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:'Instrument Sans',sans-serif;font-size:2rem;line-height:.8;color:var(--red);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 1.3rem;max-width:34em}
+
+/* signup form */
+.roles{display:flex;gap:8px;margin:0 0 1rem;padding:0;border:0;flex-wrap:wrap}
+.roles label{flex:1 1 7rem}
+.roles input{position:absolute;opacity:0}
+.roles span{display:block;text-align:center;padding:.7rem .6rem;border:2px solid var(--form-fg);border-radius:999px;font-weight:600;cursor:pointer;color:var(--form-fg)}
+.roles input:checked+span{background:var(--form-fg);color:var(--form-bg)}
+.roles input:focus-visible+span{outline:3px solid var(--form-fg);outline-offset:3px}
+.field{display:flex;gap:10px;flex-wrap:wrap}
+.field input[type=email]{flex:1 1 14rem;min-height:54px;padding:.5rem 1.2rem;border-radius:999px;border:2px solid var(--form-fg);background:transparent;color:var(--form-fg);font:inherit}
+.field input::placeholder{color:var(--form-fg);opacity:.6}
+[data-signup-msg]{min-height:1.5em;margin:1rem 0 0;color:var(--form-fg);font-weight:600}

@@ -1,0 +1,41 @@
+/* ticket sign-up. vars: --t-main --t-main-fg --t-hl --t-stub --t-stub-fg --t-notch --t-shadow */
+.ticket{display:flex;width:100%;max-width:660px;transform:rotate(-2.5deg);filter:drop-shadow(10px 14px 0 var(--t-shadow,rgba(58,11,20,.22)))}
+.t-main{flex:1;min-width:0;background:var(--t-main);color:var(--t-main-fg);padding:clamp(1.2rem,2.4vw,1.9rem);border-radius:18px 0 0 18px}
+.t-main img{width:min(100%,290px);height:auto;margin:0 0 1.4rem;border-radius:12px}
+.t-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 1.2rem;margin:0}
+.t-grid div{border-top:2px solid rgba(244,227,210,.3);padding-top:.5rem}
+.t-grid dt{font-size:.82rem;font-weight:500;opacity:.75;line-height:1.2}
+.t-grid dd{margin:.15rem 0 0;font:400 clamp(1.3rem,2.1vw,1.65rem)/1.1 'Anton',sans-serif;letter-spacing:.02em;text-transform:uppercase;color:var(--t-hl)}
+.t-stub{position:relative;width:clamp(210px,29%,250px);flex:none;background:var(--t-stub);color:var(--t-stub-fg);padding:clamp(1.1rem,2vw,1.6rem) 1.3rem;border-radius:0 18px 18px 0;transition:transform .8s cubic-bezier(.25,.8,.25,1),opacity .8s;transform-origin:0 0}
+.t-stub .perf{position:absolute;left:-1.5px;top:20px;bottom:20px;border-left:3px dashed var(--t-notch)}
+.t-stub .notch{position:absolute;left:-14px;width:28px;height:28px;border-radius:50%;background:var(--t-notch)}
+.t-stub .notch.top{top:-14px}.t-stub .notch.bot{bottom:-14px}
+.t-stub .qr{width:100%;max-width:120px;margin:0 0 .8rem;border-radius:6px;overflow:hidden}
+.t-stub h3{margin:0 0 .8rem;font:400 1.6rem/1 'Anton',sans-serif;text-transform:uppercase;letter-spacing:.01em;color:var(--t-stub-fg)}
+.t-stub input[type=email]{width:100%;min-height:46px;padding:.4rem .8rem;border-radius:8px;border:2px solid var(--t-stub-fg);background:#fff;color:var(--ink,#3A0B14);font:inherit;font-size:1rem}
+.t-stub .btn{width:100%;margin-top:.5rem;min-height:46px;font-size:1rem;padding:.4rem .6rem;background:var(--t-btn,var(--red));color:var(--t-btn-fg,var(--bg));border-color:var(--t-btn,var(--red))}
+.t-stub .btn:hover{background:var(--t-btn-hover,var(--t-stub-fg));border-color:var(--t-btn-hover,var(--t-stub-fg))}
+.t-stub [data-signup-msg]{margin:.7rem 0 0;font-weight:600;font-size:.98rem;line-height:1.3;min-height:0;color:var(--t-stub-fg)}
+.ticket.is-done .t-stub{transform:translate(34px,26px) rotate(9deg);filter:drop-shadow(4px 6px 0 rgba(58,11,20,.2))}
+.ticket.is-done .stub-fields{display:none}
+@media (prefers-reduced-motion:reduce){.t-stub{transition:none}.ticket.is-done .t-stub{transform:none}}
+@media (max-width:640px){
+  .ticket{flex-direction:column;transform:rotate(-1.2deg)}
+  .t-main{border-radius:18px 18px 0 0}
+  .t-stub{width:100%;border-radius:0 0 18px 18px;padding-top:1.6rem;display:grid;grid-template-columns:100px 1fr;gap:0 1rem;align-items:start}
+  .t-stub .qr{grid-row:1/3;margin:0}
+  .t-stub .perf{left:20px;right:20px;top:-1.5px;bottom:auto;border-left:0;border-top:3px dashed var(--t-notch)}
+  .t-stub .notch{top:-14px!important;bottom:auto!important}
+  .t-stub .notch.top{left:-14px}.t-stub .notch.bot{left:auto;right:-14px}
+  .t-stub h3{margin-bottom:.5rem}
+  .ticket.is-done .t-stub{transform:translate(10px,16px) rotate(2deg)}
+}
+/* role pills that sit beside the ticket */
+.lane{border:0;margin:0 0 1.2rem;padding:0}
+.lane legend{padding:0;margin:0 0 .6rem;font-weight:600}
+.lane .pills{display:flex;gap:8px;flex-wrap:wrap}
+.lane label{flex:1 1 7rem;max-width:11rem}
+.lane input{position:absolute;opacity:0}
+.lane span{display:block;text-align:center;padding:.7rem .6rem;border:2px solid var(--lane-fg);border-radius:999px;font-weight:600;cursor:pointer;color:var(--lane-fg)}
+.lane input:checked+span{background:var(--lane-fg);color:var(--lane-bg)}
+.lane input:focus-visible+span{outline:3px solid var(--lane-fg);outline-offset:3px}
