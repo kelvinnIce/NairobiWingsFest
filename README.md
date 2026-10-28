@@ -22,4 +22,4 @@ To swap an image, replace the file in `src/img/` with the same name (webp, trans
 
 ## Still to finish before launch
 
-Event date, venue, ticket price, social links, and the sign-up form endpoint (`FORM_ENDPOINT` in `src/js/shared2.js`). Until the endpoint is set, the form does not send emails anywhere.
+Event date, venue, ticket price, social links, and the sign-up form endpoint (`FORM_ENDPOINT` in `src/js/shared.js`). Until the endpoint is set, the form does not send emails anywhere.
